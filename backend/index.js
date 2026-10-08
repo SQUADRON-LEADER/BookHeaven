@@ -21,10 +21,10 @@ const allowedOrigins = [
 app.use(express.json()); // Parse JSON
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin) || origin.startsWith("http://localhost:")) {
+    if (!origin || allowedOrigins.includes(origin) || origin.startsWith("http://localhost:") || origin.includes(".vercel.app")) {
       callback(null, true);
     } else {
-      callback(null, true); // Permissive in dev mode
+      callback(null, true); // Permissive in dev/production
     }
   },
   credentials: true,
