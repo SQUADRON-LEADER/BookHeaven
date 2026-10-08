@@ -1,0 +1,208 @@
+/* ======================================================
+   Auth Pages Styles (Login / Register / Forgot Password)
+   ====================================================== */
+
+.lib-auth-page {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1rem;
+  background: radial-gradient(circle at 50% 30%, rgba(201, 151, 58, 0.12), transparent 60%),
+              var(--clr-bg-1);
+}
+
+.lib-auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 2.5rem;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+}
+
+.lib-auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.lib-auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.lib-auth-brand-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(201, 151, 58, 0.2), rgba(201, 151, 58, 0.05));
+  border: 1px solid rgba(201, 151, 58, 0.35);
+  border-radius: var(--radius-sm);
+  color: var(--clr-gold);
+}
+
+.lib-auth-brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--clr-text-1);
+  letter-spacing: -0.01em;
+}
+
+.lib-auth-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--clr-text-1);
+  margin-bottom: 0.4rem;
+}
+
+.lib-auth-sub {
+  color: var(--clr-text-2);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.lib-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.lib-auth-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lib-auth-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--clr-text-1);
+}
+
+.lib-auth-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lib-auth-forgot-link {
+  font-size: 0.82rem;
+  color: var(--clr-gold);
+  transition: opacity 0.2s ease;
+}
+
+.lib-auth-forgot-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.lib-auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lib-auth-field-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--clr-text-3);
+  pointer-events: none;
+}
+
+.lib-auth-input {
+  width: 100%;
+  padding: 0.85rem 2.8rem 0.85rem 2.75rem;
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  color: var(--clr-text-1);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lib-auth-input:focus {
+  outline: none;
+  border-color: var(--clr-gold);
+  box-shadow: 0 0 0 3px rgba(201, 151, 58, 0.15);
+}
+
+.lib-auth-input::placeholder {
+  color: var(--clr-text-3);
+}
+
+.lib-auth-toggle-pwd {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--clr-text-3);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.lib-auth-toggle-pwd:hover {
+  color: var(--clr-text-1);
+}
+
+.lib-auth-error {
+  color: #f87171;
+  font-size: 0.82rem;
+  margin-top: 0.2rem;
+}
+
+.lib-auth-submit {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.lib-auth-footer {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--clr-border);
+  text-align: center;
+}
+
+.lib-auth-footer p {
+  color: var(--clr-text-2);
+  font-size: 0.92rem;
+  margin-bottom: 0.75rem;
+}
+
+.lib-auth-switch-link {
+  color: var(--clr-gold);
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.lib-auth-switch-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.lib-auth-admin-link a {
+  color: var(--clr-text-3);
+  font-size: 0.82rem;
+  transition: color 0.2s ease;
+}
+
+.lib-auth-admin-link a:hover {
+  color: var(--clr-gold);
+}

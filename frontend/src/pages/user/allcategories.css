@@ -1,0 +1,257 @@
+/* ======================================================
+   All Categories Page Styles
+   ====================================================== */
+
+.lib-cat-page {
+  min-height: 80vh;
+  background-color: var(--clr-bg-1);
+  color: var(--clr-text-1);
+  padding-bottom: 5rem;
+}
+
+.lib-cat-header {
+  position: relative;
+  background: radial-gradient(circle at 50% 20%, rgba(201, 151, 58, 0.15), transparent 70%),
+              linear-gradient(180deg, var(--clr-bg-2) 0%, var(--clr-bg-1) 100%);
+  padding: 4.5rem 1rem 3rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.lib-cat-header__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--clr-text-1);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.lib-cat-header__sub {
+  color: var(--clr-text-2);
+  font-size: 1.05rem;
+  max-width: 650px;
+}
+
+.lib-cat-body {
+  padding-top: 3rem;
+}
+
+.lib-cat-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* Sidebar */
+.lib-cat-sidebar {
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  position: sticky;
+  top: 90px;
+}
+
+.lib-cat-sidebar__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--clr-border);
+  margin-bottom: 1rem;
+}
+
+.lib-cat-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lib-cat-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  color: var(--clr-text-2);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.lib-cat-nav-item:hover {
+  background: var(--clr-bg-2);
+  color: var(--clr-text-1);
+}
+
+.lib-cat-nav-item--active {
+  background: rgba(201, 151, 58, 0.12);
+  color: var(--clr-gold);
+  border-color: rgba(201, 151, 58, 0.3);
+  font-weight: 600;
+}
+
+.lib-cat-count-badge {
+  background: var(--clr-bg-2);
+  color: var(--clr-text-3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid var(--clr-border);
+}
+
+.lib-cat-nav-item--active .lib-cat-count-badge {
+  background: var(--clr-gold);
+  color: #0b0f19;
+  border-color: var(--clr-gold);
+}
+
+/* Main Grid */
+.lib-cat-main {
+  min-width: 0;
+}
+
+.lib-cat-main__header {
+  margin-bottom: 2rem;
+}
+
+.lib-cat-main__header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--clr-text-1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lib-cat-highlight-count {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--clr-text-3);
+}
+
+.lib-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.lib-category-card {
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.lib-category-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--clr-gold);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.lib-category-card__thumb-wrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background: var(--clr-bg-2);
+}
+
+.lib-category-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.lib-category-card:hover .lib-category-card__img {
+  transform: scale(1.05);
+}
+
+.lib-category-card__overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.lib-category-card__badge {
+  background: rgba(11, 15, 25, 0.8);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.lib-category-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lib-category-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-text-1);
+  margin-bottom: 0.5rem;
+}
+
+.lib-category-card__desc {
+  color: var(--clr-text-2);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.lib-category-card__btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lib-loading-box,
+.lib-empty-box {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  color: var(--clr-text-3);
+}
+
+.lib-empty-box svg {
+  color: var(--clr-gold);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 860px) {
+  .lib-cat-layout {
+    grid-template-columns: 1fr;
+  }
+  .lib-cat-sidebar {
+    position: static;
+  }
+}

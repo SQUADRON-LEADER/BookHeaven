@@ -1,0 +1,253 @@
+/* ======================================================
+   Admin Portal Navbar Styles
+   ====================================================== */
+
+.lib-admin-nav {
+  background: var(--clr-bg-2);
+  border-bottom: 1px solid var(--clr-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+}
+
+.lib-admin-nav__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.lib-admin-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.lib-admin-nav__brand-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, rgba(201, 151, 58, 0.25), rgba(201, 151, 58, 0.05));
+  border: 1px solid rgba(201, 151, 58, 0.35);
+  border-radius: var(--radius-sm);
+  color: var(--clr-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lib-admin-nav__brand-text {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--clr-text-1);
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.lib-admin-nav__brand-text small {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Links */
+.lib-admin-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lib-admin-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  color: var(--clr-text-2);
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.lib-admin-nav__link:hover {
+  color: var(--clr-text-1);
+  background: var(--clr-card);
+}
+
+.lib-admin-nav__link--active {
+  color: var(--clr-gold);
+  background: rgba(201, 151, 58, 0.12);
+  font-weight: 600;
+}
+
+/* Dropdown */
+.lib-admin-nav__dropdown-wrap,
+.lib-admin-nav__profile-wrap {
+  position: relative;
+}
+
+.lib-admin-nav__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 1010;
+}
+
+.lib-admin-nav__dropdown-menu--right {
+  left: auto;
+  right: 0;
+}
+
+.lib-admin-nav__dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  color: var(--clr-text-2);
+  font-size: 0.86rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lib-admin-nav__dropdown-item:hover {
+  background: var(--clr-bg-2);
+  color: var(--clr-text-1);
+}
+
+.lib-admin-nav__dropdown-item--danger {
+  color: #f87171;
+}
+
+.lib-admin-nav__dropdown-item--danger:hover {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.lib-admin-nav__divider {
+  border: none;
+  border-top: 1px solid var(--clr-border);
+  margin: 0.35rem 0;
+}
+
+/* Profile button */
+.lib-admin-nav__profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  color: var(--clr-text-1);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lib-admin-nav__profile-btn:hover {
+  border-color: var(--clr-gold);
+}
+
+.lib-admin-nav__avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(201, 151, 58, 0.2);
+  color: var(--clr-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lib-admin-nav__role-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.lib-admin-nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--clr-text-1);
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+/* Mobile Menu */
+.lib-admin-nav__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.5rem 1.5rem;
+  background: var(--clr-bg-2);
+  border-top: 1px solid var(--clr-border);
+}
+
+.lib-admin-nav__mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  color: var(--clr-text-2);
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lib-admin-nav__mobile-link:hover {
+  background: var(--clr-card);
+  color: var(--clr-text-1);
+}
+
+.lib-admin-nav__mobile-link--danger {
+  color: #f87171;
+}
+
+@media (max-width: 992px) {
+  .lib-admin-nav__links {
+    display: none;
+  }
+  .lib-admin-nav__hamburger {
+    display: block;
+  }
+  .lib-admin-nav__mobile--open {
+    display: flex;
+  }
+}

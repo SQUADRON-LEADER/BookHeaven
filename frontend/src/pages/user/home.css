@@ -1,0 +1,396 @@
+/* ======================================================
+   Home Page Styles
+   ====================================================== */
+
+/* --- Hero ------------------------------------------- */
+.lib-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lib-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/library.avif') center / cover no-repeat;
+  z-index: 0;
+}
+
+.lib-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 17, 23, 0.92) 0%,
+    rgba(15, 17, 23, 0.75) 60%,
+    rgba(15, 17, 23, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.lib-hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 720px;
+}
+
+.lib-hero__title {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  color: var(--clr-text);
+  line-height: 1.05;
+}
+
+.lib-hero__subtitle {
+  font-size: 1.05rem;
+  max-width: 500px;
+}
+
+.lib-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.lib-hero__btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 0.95rem;
+}
+
+/* Decorative orbs */
+.lib-hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.lib-hero__orb--1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108,143,255,0.12) 0%, transparent 65%);
+  top: -200px;
+  right: -100px;
+}
+.lib-hero__orb--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 65%);
+  bottom: -100px;
+  left: 10%;
+}
+
+/* --- Stats ------------------------------------------ */
+.lib-stats {
+  background: var(--clr-bg-2);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  padding: var(--space-12) 0;
+}
+
+.lib-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.lib-stats__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--transition);
+}
+.lib-stats__card:hover {
+  border-color: rgba(108,143,255,0.3);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.lib-stats__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(108,143,255,0.1);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lib-stats__number {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  line-height: 1;
+}
+
+.lib-stats__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+}
+
+/* --- Categories ------------------------------------- */
+.lib-categories {
+  background: var(--clr-bg);
+}
+
+.lib-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-10);
+}
+
+.lib-category-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+  group: true;
+}
+.lib-category-card:hover {
+  border-color: var(--clr-border-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.lib-category-card__img-wrap {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lib-category-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.lib-category-card:hover .lib-category-card__img {
+  transform: scale(1.07);
+}
+
+.lib-category-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(15,17,23,0.7) 100%);
+}
+
+.lib-category-card__body {
+  padding: var(--space-4) var(--space-5);
+  flex: 1;
+}
+
+.lib-category-card__name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-bottom: var(--space-1);
+}
+
+.lib-category-card__count {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+}
+
+.lib-category-card__arrow {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: rgba(15,17,23,0.7);
+  border: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-text-muted);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all var(--transition);
+}
+.lib-category-card:hover .lib-category-card__arrow {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--clr-primary);
+}
+
+.lib-categories__footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- New Arrivals ----------------------------------- */
+.lib-arrivals {
+  background: var(--clr-bg-2);
+  border-top: 1px solid var(--clr-border);
+}
+
+.lib-arrivals__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+.lib-book-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+.lib-book-card:hover {
+  border-color: var(--clr-border-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.lib-book-card__cover-wrap {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lib-book-card__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.lib-book-card:hover .lib-book-card__cover {
+  transform: scale(1.05);
+}
+
+.lib-book-card__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(26,32,48,0.95) 100%);
+}
+
+.lib-book-card__info {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lib-book-card__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lib-book-card__author {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+}
+
+/* --- Hours ------------------------------------------ */
+.lib-hours {
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+}
+
+.lib-hours__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lib-hours__card {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.lib-hours__card--accent {
+  border-color: rgba(108,143,255,0.2);
+  background: linear-gradient(135deg, rgba(108,143,255,0.05) 0%, rgba(167,139,250,0.05) 100%);
+}
+
+.lib-hours__card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: rgba(108,143,255,0.1);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lib-hours__card-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-text);
+}
+
+.lib-hours__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+.lib-hours__list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--clr-border);
+  padding-bottom: var(--space-3);
+}
+.lib-hours__list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.lib-hours__list span {
+  color: var(--clr-text-muted);
+}
+.lib-hours__list strong {
+  color: var(--clr-text);
+  font-weight: 500;
+}
+
+/* --- Responsive ------------------------------------- */
+@media (max-width: 768px) {
+  .lib-stats__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .lib-hero__title {
+    font-size: 2.5rem;
+  }
+}
