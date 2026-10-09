@@ -38,7 +38,7 @@ export function LibraryProvider({ children }) {
   // 5. Current Logged-in User State
   const [currentUser, setCurrentUser] = useState(() => {
     const saved = localStorage.getItem("academic_lib_auth_user");
-    return saved ? JSON.parse(saved) : INITIAL_REGISTERED_ACCOUNTS[0]; // Admin by default
+    return saved ? JSON.parse(saved) : null;
   });
 
   // 6. Notification Banner State

@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { LibraryProvider } from "./context/LibraryContext";
 import AcademicNavbar from "./components/AcademicNavbar";
 import NotificationBanner from "./components/NotificationBanner";
@@ -12,6 +12,9 @@ import TestingReport from "./pages/TestingReport";
 import Login from "./pages/Login";
 
 function AppLayout({ children }) {
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
+
   return (
     <div className="app-container">
       {/* Ambient Background Video */}
@@ -27,7 +30,7 @@ function AppLayout({ children }) {
         <div className="video-overlay" />
       </div>
 
-      <AcademicNavbar />
+      {!isLoginPage && <AcademicNavbar />}
       <NotificationBanner />
       <main className="main-content">{children}</main>
       <footer className="academic-footer">
